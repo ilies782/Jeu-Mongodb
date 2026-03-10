@@ -1,13 +1,14 @@
 from pymongo import MongoClient
 
+#Connexion à MongoDB
 client = MongoClient("mongodb://localhost:27017")
-
 db = client["python_bdd"]
 
 collection_personnages = db["personnages"]
 collection_monstres = db["monstres"]
 collection_scores = db["meilleurs_scores"]
 
+#Insertion des personnages
 personnages = [
     {"nom": "Guerrier", "attaque": 15, "defense": 10, "pv": 100},
     {"nom": "Mage_noir", "attaque": 20, "defense": 5, "pv": 80},
@@ -21,10 +22,10 @@ personnages = [
     {"nom": "Chevalier", "attaque": 15, "defense": 15, "pv": 120},
 ]
 
-
 collection_personnages.insert_many(personnages)
 print("Personnages insérés avec succès !")
 
+#Insertion des monstres
 monstres = [
     {"nom": "Gobelin", "attaque": 8, "defense": 5, "pv": 50},
     {"nom": "Orc", "attaque": 12, "defense": 8, "pv": 80},
@@ -34,16 +35,4 @@ monstres = [
 
 collection_monstres.insert_many(monstres)
 print("Monstres insérés avec succès !")
-
-
-meilleurs_scores = [
-    {"joueur": "Alice", "score": 1500},
-    {"joueur": "Bob", "score": 1200},
-    {"joueur": "Charlie", "score": 1000},
-]
-
-collection_scores.insert_many(meilleurs_scores)
-print("Scores insérés avec suc cès !")
-
-
 
