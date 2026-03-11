@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-#Connexion à MongoDB
+# Connexion à MongoDB
 client = MongoClient("mongodb://localhost:27017")
 db = client["python_bdd"]
 
@@ -35,4 +35,3 @@ monstres = [
 
 collection_monstres.insert_many(monstres)
 print("Monstres insérés avec succès !")
-

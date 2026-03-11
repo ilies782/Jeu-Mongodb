@@ -1,3 +1,7 @@
+from utills import afficher_perso, afficher_equipe
+from games import choisir_perso
+from pymongo import MongoClient
+
 
 def print_menu():
     print("1. Lancer le jeu")
@@ -12,30 +16,34 @@ def recuperer_nombre_valid(min_val, max_val, message):
     return int(saisie)
 
 def option_choisi(choix):
-   for nombre in range(1):
       if choix == 1 :
-        continue
+        pass
       elif choix == 2 :
        print("Voici l'historique des jeux")
         # historique()
        exit()
       else:
-        exit()
         print(" Le jeu est eteint.")
+        exit()
 
 def demarrer_jeux(message):
     utilisateur = input(message)
     print(f"Bienvenue  {utilisateur} !")
+    afficher_perso()
+    choisir_perso()
+    afficher_equipe()
 
 
 def main():
     print_menu()
-    choix = recuperer_nombre_valid(1,5,"Choisir une options :")
+    choix = recuperer_nombre_valid(1,3,"Choisir une options :")
     print(f"Tu as choisi : {choix}")
     option_choisi(choix)
     demarrer_jeux("Quel est votre nom d'utilisateur : ")
 
 
+
 main()
+
 
 
