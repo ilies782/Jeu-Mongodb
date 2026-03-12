@@ -37,7 +37,7 @@ def attaque_monstre(equipe,monstre_aleatoire):
        degats_perso= personnage["attaque"] - monstre_aleatoire["defense"] # Je calcule les degats en fesant attention a la defense du monstre
        monstre_aleatoire["pv"] -=degats_perso # Je soustrains les pv du monstre avec les degats faites par le perso
        print(f"{personnage['nom']} attaque {monstre_aleatoire['nom']} et inflige {degats_perso} degats (PV monstre : {monstre_aleatoire["pv"]})")
-       if monstre_aleatoire["pv"]<= 0: # Verifie si le monstre est vaincu
+       if monstre_aleatoire["pv"]<= 0: # Je verifie si le monstre est vaincu
                 print(f"\nVictoire, {monstre_aleatoire['nom']} a ete vaincu")
                 return 
          
@@ -46,7 +46,7 @@ def attaque_perso(equipe,monstre_aleatoire):
     degats_monstre=monstre_aleatoire["attaque"] -attaque_perso_aleatoire["defense"] # On calcule les degats en fesant attention a la defense du perso
     attaque_perso_aleatoire["pv"]-=degats_monstre #On soustrains les pv du perso avec les degats faites par le monstre
     print(f"{monstre_aleatoire['nom']} attaque {attaque_perso_aleatoire['nom']} et inflige {degats_monstre} degats (PV {attaque_perso_aleatoire['nom']}: {attaque_perso_aleatoire['pv']})")
-    if attaque_perso_aleatoire["pv"] <= 0: # Verifier que le perso a ete vaincu et si oui le sortir de la liste
+    if attaque_perso_aleatoire["pv"] <= 0: # Je verifie que le perso a ete vaincu et si oui le sortir de la liste
         print(f"\ndefaite {attaque_perso_aleatoire['nom']} a ete vaincu")
         equipe.remove(attaque_perso_aleatoire)
         if len(equipe) == 0: # Je verifie si tout les perso sont vaincus, si oui defaite et je sort du jeu

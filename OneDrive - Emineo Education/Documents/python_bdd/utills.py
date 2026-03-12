@@ -8,7 +8,7 @@ collection_personnages = db["personnages"]
 def afficher_perso():
     print(" Choissiez 3 personnages parmi ceux proposer (un par un ) :")
     for personnage in collection_personnages.find({}) : # Je Recupere les valeur dans la db
-        print("Nom :", personnage["nom"], end= ' ')# Afficher les personnages disponibles
+        print("Nom :", personnage["nom"], end= ' ')# j'affiche les personnages disponibles
         print("Attaque :", personnage["attaque"], end= ' ')
         print("Defense :", personnage["defense"], end= ' ' )
         print("PV : ", personnage["pv"], end= ' ')

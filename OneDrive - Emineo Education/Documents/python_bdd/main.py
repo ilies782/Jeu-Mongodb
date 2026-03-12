@@ -9,7 +9,7 @@ def print_menu():
     print("3. Quitter le jeu")  
 
 def recuperer_nombre_valid(min_val, max_val, message):
-    saisie = int (input(message)) #Demande a l'utilisateur de taper un nombre compris entre 1 et 3
+    saisie = int (input(message)) #Je demande a l'utilisateur de taper un nombre compris entre 1 et 3
     while ((saisie < min_val) or (saisie > max_val)): # Je fait une boucle pour que meme si il met plus que 3 le programme lui redemande le choix
         print(f"Erreur, entrez un nombre entre {min_val} et {max_val}")
         saisie = int(input(message))
@@ -25,7 +25,7 @@ def option_choisi(choix):
         print(" Le jeu est eteint.")
         exit()
 
-def demarrer_jeux(message): #demander un nom d'utilisateur 
+def demarrer_jeux(message): #Je demande un nom d'utilisateur 
     utilisateur = input(message)
     print(f"Bienvenue  {utilisateur} !")
     afficher_perso()# On affiche les fonctions creer dans les autre fichier du code
