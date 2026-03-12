@@ -8,6 +8,10 @@ collection_personnages = db["personnages"]
 collection_monstres = db["monstres"]
 collection_scores = db["meilleurs_scores"]
 
+collection_personnages.delete_many({})
+collection_monstres.delete_many({})
+
+
 #Insertion des personnages
 personnages = [
     {"nom": "Guerrier", "attaque": 15, "defense": 10, "pv": 100},
